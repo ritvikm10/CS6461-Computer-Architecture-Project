@@ -1,27 +1,24 @@
 package src;
 
 /**
- * A data structure to represent a parsed instruction.
- * 
- * Fields:
- * - opcode: instruction mnemonic (e.g., LDR, STR).
- * - R: Register number.
- * - IX: Index register number.
- * - I: Indirect addressing bit.
- * - address: memory address or label.
- * - original: original instruction text (for writing in output).
+ * Represents a parsed instruction.
  */
 public class Instruction {
-    String opcode;
-    int R, IX, I, address;
-    String original;
+    public String mnemonic;
+    public int R, IX, I, address;
+    public String original;
 
-    public Instruction(String opcode, int R, int IX, int I, int address, String original) {
-        this.opcode = opcode;
+    public Instruction(String mnemonic, int R, int IX, int I, int address, String original) {
+        this.mnemonic = mnemonic;
         this.R = R;
         this.IX = IX;
         this.I = I;
         this.address = address;
         this.original = original;
+    }
+
+    public String getOpcodeBinary() {
+        Opcode op = Opcode.fromMnemonic(mnemonic);
+        return (op != null) ? op.getBinary() : null;
     }
 }
