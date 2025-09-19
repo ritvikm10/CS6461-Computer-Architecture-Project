@@ -1,0 +1,7 @@
+Tests halt and trap.
+
+LOC 20
+HLT
+TRAP 5
+END
+

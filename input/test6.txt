@@ -1,0 +1,7 @@
+I/O Instructions
+
+LOC 200
+IN  0,1         ; Input from device 1 into R0
+OUT 2,2         ; Output R2 to device 2
+CHK 3           ; Check status of device 3
+END

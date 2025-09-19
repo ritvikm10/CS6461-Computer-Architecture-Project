@@ -1,0 +1,9 @@
+Load/ Store instruction: Tests normal and index register loads/stores.
+
+LOC 30
+LDR 2,1,15      ; Load R2 from mem[15 + IX1]
+STR 3,0,25      ; Store R3 into mem[25]
+LDA 1,2,40      ; Load EA into R1
+LDX 1,60        ; Load Index register 1 from mem[60]
+STX 2,70        ; Store Index register 2 to mem[70]
+END

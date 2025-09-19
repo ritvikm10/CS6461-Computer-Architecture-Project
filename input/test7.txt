@@ -1,0 +1,10 @@
+Directives + Labels (Data Test)
+
+LOC 6
+Data 10
+Data 3
+Data End
+Data 0
+End: Data 12
+LDR 3,0,10
+END
