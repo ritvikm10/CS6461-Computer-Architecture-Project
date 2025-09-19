@@ -3,26 +3,22 @@ package src;
 import java.util.HashMap;
 
 /**
- * Symbol Table for storing labels and their corresponding addresses.
- * 
- * Tasks:
- * - Store (label → address) mappings.
- * - Provide lookup methods for PassTwo.
- * - Handle duplicate label errors.
+ * SymbolTable: stores label → address mapping.
  */
 public class SymbolTable {
     private HashMap<String, Integer> table = new HashMap<>();
 
-    public void add(String label, int address) {
-        // TODO: Add label to symbol table
+    public void add(String label, int address) throws Exception {
+        String key = label.toUpperCase();
+        if (table.containsKey(key)) throw new Exception("Duplicate label: " + label);
+        table.put(key, address);
     }
 
     public int get(String label) {
-        // TODO: Return address for given label
-        return -1;
+        return table.getOrDefault(label.toUpperCase(), -1);
     }
 
     public boolean contains(String label) {
-        return table.containsKey(label);
+        return table.containsKey(label.toUpperCase());
     }
 }

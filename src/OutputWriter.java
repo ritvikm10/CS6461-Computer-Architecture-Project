@@ -1,18 +1,16 @@
 package src;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
+import java.io.*;
 
-/**
- * Handles writing output to the load file.
- * 
- * Tasks:
- * - Format address in octal (6 digits).
- * - Convert binary machine code to octal (6 digits).
- * - Write formatted output: [address] [machine code] [original instruction].
- */
 public class OutputWriter {
-    public static void writeLine(BufferedWriter writer, int address, String machineCode, String original) throws IOException {
-        // TODO: Implement output writing
+    public static void writeLine(BufferedWriter bw, String addrOctal, String machineOctal, String source) throws IOException {
+        if (source != null) {
+            // Listing file: addr + code + source
+            bw.write(String.format("%6s   %6s   %s", addrOctal, machineOctal, source));
+        } else {
+            // Load file: addr + code only
+            bw.write(String.format("%6s   %6s", addrOctal, machineOctal));
+        }
+        bw.newLine();
     }
 }
