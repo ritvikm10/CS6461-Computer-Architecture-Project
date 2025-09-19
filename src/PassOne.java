@@ -75,6 +75,6 @@ public class PassOne {
         int idx = s.indexOf(';');
         if (idx < 0) idx = s.indexOf('#');
         if (idx < 0) idx = s.indexOf("//");
-        return (idx >= 0) ? s.substring(0, idx) : s;
-    }
+        return (idx >= 0) ? s.substring(0, idx) : s;
+    }
 }
