@@ -51,14 +51,17 @@ AssemblerProject/
 ## ⚙️ How to Run
 1. Clone the repository:
    - git clone https://github.com/ritvikm10/CS6461-Computer-Architecture-Project.git
-   - cd Assembler
-2. Compile the source:
+2. Put one block at a time into input/source.asm.
+3. Run:
    javac src/assembler/*.java
-3. Run the assembler:
    java -cp src assembler.Assembler
-4. Check the output:
-   Input file → input/source.asm
-   Output file → output/loadfile.txt
+
+
+Check:
+
+output/listing.txt → human-readable listing file.
+
+output/loadfile.txt → machine-loadable memory file.
    
  --------------------------------
  
